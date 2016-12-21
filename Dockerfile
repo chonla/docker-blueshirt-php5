@@ -1,4 +1,4 @@
-FROM chonla/alpine-php7:0.4
+FROM chonla/alpine-php7:0.4.1
 MAINTAINER Chonlasith Jucksriporn <chonla@capabilify.com>
 
 # Download and extract BlueShirt package
