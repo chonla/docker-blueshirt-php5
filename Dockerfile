@@ -1,4 +1,4 @@
-FROM chonla/alpine-php7:0.1
+FROM chonla/alpine-php5:0.1.1
 MAINTAINER Chonlasith Jucksriporn <chonla@capabilify.com>
 
 # Download and extract BlueShirt package
@@ -7,6 +7,6 @@ RUN curl -O https://bitbucket.org/chonla/blueshirt/get/master.tar.gz \
 
 # Install BlueShirt
 RUN cd /data/blueshirt && repo_dir=$(ls) && ln -s $repo_dir source && cd $repo_dir  \
-    && php7 install.php
+    && php install.php
 
-ENTRYPOINT ["php7", "-S", "0.0.0.0:8000", "-t", "/data/blueshirt/source"]
+ENTRYPOINT ["php", "-S", "0.0.0.0:8000", "-t", "/data/blueshirt/source"]
